@@ -1,7 +1,6 @@
 import bg from "@/assets/media/Background.png";
 // import bg from "../assets/media/Background.png";
 
-import Image from "next/image";
 import Card from "./card";
 import Logo from "./logo";
 export default function Hero() {

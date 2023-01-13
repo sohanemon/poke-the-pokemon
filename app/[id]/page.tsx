@@ -1,11 +1,13 @@
 import Logo from "@/components/logo";
+import image from "@/assets/media/image04.png";
+import Image from "next/image";
 
 export default function Page() {
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto'>
       <Logo />
       <main className='grid grid-cols-3'>
-        {/* todo: left */}
+        {/* done: left */}
         <div>
           <p className='2xl:text-5xl text-3xl font-medium text-blue-600'>
             Bulbasaur #001
@@ -16,10 +18,30 @@ export default function Page() {
           </p>
           <GradientCard />
         </div>
-        {/* todo: middle */}
-        <div></div>
+        {/* done: middle */}
+        <div>
+          <Image className='w-full hover:scale-110 anim' src={image} alt='' />
+        </div>
         {/* todo: right */}
-        <div></div>
+        <div>
+          {/* each items */}
+          <div>
+            <p className='text-xl'>Type</p>
+            <div className='2xl:space-x-5 space-x-3'>
+              <button className='bg-grass btn'>Grass</button>
+              <button className='bg-poison btn'>Poison</button>
+            </div>
+          </div>
+          <div>
+            <p className='text-xl'>Weaknesses</p>
+            <div className='2xl:space-x-5 space-x-3'>
+              <button className='bg-grass btn'>Grass</button>
+              <button className='bg-poison btn'>Poison</button>
+              <button className='bg-grass btn'>Grass</button>
+              <button className='bg-poison btn'>Poison</button>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
