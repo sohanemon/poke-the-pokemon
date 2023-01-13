@@ -4,6 +4,6 @@
 
 @layer components {
   .btn {
-    @apply py-1 px-5 rounded text-sm text-white;
+    @apply py-1 px-4 xl:px-3 2xl:px-5 rounded text-sm text-white;
   }
 }

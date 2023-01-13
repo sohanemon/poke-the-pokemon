@@ -13,7 +13,7 @@ export default function Hero() {
         {/* done: logo */}
         <Image src={logo} alt='Logo' className='my-16' />
         {/* todo: card */}
-        <div className='grid lg:grid-cols-4 xl:grid-cols-5 gap-10 w-5/6 items-center'>
+        <div className='grid lg:grid-cols-4 xl:grid-cols-5 gap-10 w-5/6 xl:w-4/5 2xl:w-2/3 items-center mb-40'>
           {[...Array(10).keys()].map((card, idx) => (
             <Card key={idx} />
           ))}
