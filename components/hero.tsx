@@ -1,8 +1,9 @@
 import bg from "@/assets/media/Background.png";
 // import bg from "../assets/media/Background.png";
-import logo from "@/assets/media/logo.png";
+
 import Image from "next/image";
 import Card from "./card";
+import Logo from "./logo";
 export default function Hero() {
   return (
     <section
@@ -11,9 +12,10 @@ export default function Hero() {
     >
       <div className='flex flex-col items-center '>
         {/* done: logo */}
-        <Image src={logo} alt='Logo' className='my-16' />
+        <Logo />
         {/* todo: card */}
         <div className='grid lg:grid-cols-4 xl:grid-cols-5 gap-10 w-5/6 xl:w-4/5 2xl:w-2/3 items-center mb-40'>
+          {/* @ts-ignore */}
           {[...Array(10).keys()].map((card, idx) => (
             <Card key={idx} />
           ))}
