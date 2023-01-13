@@ -1,18 +1,17 @@
 import Image from "next/image";
-import image from "@/assets/media/image04.png";
 import Link from "next/link";
 
 export default function Card({ pokemon }: { pokemon: Pokemon }) {
   console.log(pokemon.image);
   return (
-    <Link href={"/bulbasaur"}>
+    <Link href={`/${pokemon.name}`}>
       <div className=' bg-white p-[10px] rounded-md hover:bg-primary anim cursor-pointer group relative sim-card'>
-        <div className='group-hover:bg-white bg-[#F2F2F2] rounded-md'>
+        <div className='group-hover:bg-white bg-[#F2F2F2] rounded-md p-5'>
           <Image
-            className='w-full group-hover:scale-110 anim '
-            src={pokemon.image as string}
-            width={1000}
-            height={1000}
+            className='w-full group-hover:scale-110 anim h-28'
+            src={pokemon.dreamworld as string}
+            width={500}
+            height={500}
             alt=''
           />
         </div>

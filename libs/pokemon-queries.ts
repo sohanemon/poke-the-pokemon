@@ -5,7 +5,7 @@ export const GET_10_POKEMONS = gql`
     pokemons(limit: 10) {
       results {
         name
-        image
+        dreamworld
       }
     }
   }
