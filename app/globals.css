@@ -7,7 +7,7 @@
     @apply py-1 px-4 xl:px-3 2xl:px-5 rounded text-sm text-white;
   }
   .anim {
-    @apply duration-300 transition-all;
+    @apply duration-500 transition-all;
   }
   .gradient {
     @apply bg-gradient-to-br from-[#FC7C23] to-[#F366B9];
