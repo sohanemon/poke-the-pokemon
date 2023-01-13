@@ -3,12 +3,13 @@ import image from "@/assets/media/image04.png";
 import Logo from "@/components/logo";
 import Image from "next/image";
 import Progress from "./progress";
+import GradientCard from "./gradient-card";
 
 export default function Page() {
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto'>
       <Logo />
-      <main className='grid grid-cols-3'>
+      <main className='grid grid-cols-3 2xl:gap-28 gap-16'>
         {/* done: left */}
         <div>
           <p className='2xl:text-5xl text-3xl font-medium text-blue-600'>
@@ -57,13 +58,3 @@ export default function Page() {
     </div>
   );
 }
-
-const GradientCard = () => {
-  return (
-    <>
-      <div className='rounded-lg w-full h-64 mx-auto  mt-10 gradient p-1 sim-card '>
-        <div className='flex flex-col justify-between h-full bg-white rounded-lg p-4 sim-card'></div>
-      </div>
-    </>
-  );
-};
