@@ -13,13 +13,7 @@
     @apply bg-gradient-to-br from-[#FC7C23] to-[#F366B9];
   }
   .sim-card {
-    -webkit-clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% 80%,
-      80% 100%,
-      0% 100% round 10px
-    );
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%);
   }
 }

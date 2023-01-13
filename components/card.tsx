@@ -5,12 +5,7 @@ import Link from "next/link";
 export default function Card() {
   return (
     <Link href={"/bulbasaur"}>
-      <div
-        className=' bg-white p-[10px] rounded-md hover:bg-primary anim cursor-pointer group relative'
-        style={{
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%)",
-        }}
-      >
+      <div className=' bg-white p-[10px] rounded-md hover:bg-primary anim cursor-pointer group relative sim-card'>
         <Image className='w-full hover:scale-110 anim' src={image} alt='' />
         <p className='text-sm absolute inset-4'>#010</p>
         <p className='mt-3 mb-1 group-hover:text-white anim'>Bulbasaur</p>
