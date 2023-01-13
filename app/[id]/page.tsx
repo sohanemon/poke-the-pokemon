@@ -1,6 +1,6 @@
 "use client";
 import home from "@/assets/icon/home.png";
-import image from "@/assets/media/image04.png";
+import image from "@/assets/media/Image04.png";
 import Logo from "@/components/logo";
 import Image from "next/image";
 import Link from "next/link";
