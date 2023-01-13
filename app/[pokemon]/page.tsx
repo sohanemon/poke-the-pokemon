@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import GradientCard from "./gradient-card";
 import Progress from "./progress";
+import { useArt } from "../../contexts/art-context";
 
 // note: 👇
 /* --------------------------------------------------------------------- */
@@ -13,6 +14,8 @@ import Progress from "./progress";
 /* --------------------------------------------------------------------- */
 
 export default function Page({ params: { pokemon } }: Props) {
+  const { art } = useArt();
+  console.log(art);
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
       <Logo />
@@ -30,7 +33,7 @@ export default function Page({ params: { pokemon } }: Props) {
         </div>
         {/* done: middle */}
         <div>
-          <Image className='w-full hover:scale-110 anim' src={image} alt='' />
+          <Image className='w-full hover:scale-110 anim' src={art} alt='' />
         </div>
         {/* todo: right */}
         <div className='space-y-10'>

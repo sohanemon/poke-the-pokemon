@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useArt } from "../contexts/art-context";
 
 export default function Card({ pokemon }: { pokemon: Pokemon }) {
+  const { setArt } = useArt();
   return (
     <Link
+      onClick={() => setArt?.(pokemon.artwork as string)}
       href={{
         pathname: `/${pokemon.name}`,
-        query: { url: pokemon.artwork as string },
       }}
     >
       <div className=' bg-white p-[10px] rounded-md hover:bg-primary anim cursor-pointer group relative sim-card'>
