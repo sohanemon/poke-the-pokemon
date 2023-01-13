@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useArt } from "../../contexts/art-context";
 import GradientCard from "./gradient-card";
 import Progress from "./progress";
+import { useQuery } from "@apollo/client";
+import { GET_POK_DETAILS } from "../../libs/pokemon-queries";
 
 // note: 👇
 /* --------------------------------------------------------------------- */
@@ -14,20 +16,30 @@ import Progress from "./progress";
 
 export default function Page({ params: { pokemon } }: Props) {
   const { art } = useArt();
+  const { loading, data } = useQuery(GET_POK_DETAILS, {
+    variables: { name: pokemon },
+  });
+  const poke = data?.pokemon as Stats;
+  console.log(poke);
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
       <Logo />
       <main className='grid grid-cols-3 2xl:gap-28 gap-16'>
         {/* done: left */}
         <div>
-          <p className='2xl:text-5xl text-3xl font-medium text-blue-600'>
-            Bulbasaur #001
+          <p className='2xl:text-5xl text-3xl font-medium text-blue-600 capitalize'>
+            {poke?.name} #{poke?.id}
           </p>
           <p className='2xl:text-xl'>
             There is a plant seed on its back right from the day this Pokémon is
             born. The seed slowly grows larger.
           </p>
-          <GradientCard />
+          <GradientCard
+            abilities={poke.abilities!}
+            category={poke.types!}
+            height={poke.height!}
+            weight={poke.weight!}
+          />
         </div>
         {/* done: middle */}
         <div>

@@ -1,4 +1,17 @@
-export default function GradientCard() {
+import { ReactNode } from "react";
+export default function GradientCard({
+  abilities,
+  category,
+  height,
+  weight,
+}: {
+  abilities: [Abilities];
+  height: number;
+  weight: number;
+
+  // @ts-ignore
+  category: [Type];
+}) {
   return (
     <>
       <div className='rounded-lg w-full h-auto mx-auto  mt-10 gradient p-1 sim-card '>
@@ -14,7 +27,13 @@ export default function GradientCard() {
   );
 }
 
-const Items = ({ title, value }: { title: string; value: string | number }) => {
+const Items = ({
+  title,
+  value,
+}: {
+  title: string;
+  value: ReactNode | string | number;
+}) => {
   return (
     <div className='space-y-3 basis-1/2'>
       <p className='text-xl font-medium'>{title}</p>

@@ -13,9 +13,28 @@ export const GET_10_POKEMONS = gql`
 `;
 
 export const GET_POK_DETAILS = gql`
-  query {
+  query ($name: String!) {
     pokemon(name: $name) {
+      id
+      height
+      weight
+      abilities {
+        ability {
+          name
+        }
+      }
+      types {
+        type {
+          name
+        }
+      }
       name
+      stats {
+        base_stat
+        stat {
+          name
+        }
+      }
     }
   }
 `;
