@@ -1,12 +1,11 @@
 "use client";
 import home from "@/assets/icon/home.png";
-import image from "@/assets/media/Image04.png";
 import Logo from "@/components/logo";
 import Image from "next/image";
 import Link from "next/link";
+import { useArt } from "../../contexts/art-context";
 import GradientCard from "./gradient-card";
 import Progress from "./progress";
-import { useArt } from "../../contexts/art-context";
 
 // note: 👇
 /* --------------------------------------------------------------------- */
@@ -15,7 +14,6 @@ import { useArt } from "../../contexts/art-context";
 
 export default function Page({ params: { pokemon } }: Props) {
   const { art } = useArt();
-  console.log(art);
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
       <Logo />
@@ -33,7 +31,13 @@ export default function Page({ params: { pokemon } }: Props) {
         </div>
         {/* done: middle */}
         <div>
-          <Image className='w-full hover:scale-110 anim' src={art} alt='' />
+          <Image
+            className='w-full hover:scale-110 anim'
+            src={art!}
+            alt=''
+            width={500}
+            height={500}
+          />
         </div>
         {/* todo: right */}
         <div className='space-y-10'>

@@ -2,6 +2,7 @@
 import "./globals.css";
 
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import ArtContext from "@/contexts/art-context";
 const client = new ApolloClient({
   uri: "https://graphql-pokeapi.graphcdn.app/",
   cache: new InMemoryCache(),
@@ -15,7 +16,9 @@ export default function RootLayout({
     <html lang='en'>
       <head />
       <body>
-        <ApolloProvider client={client}>{children}</ApolloProvider>
+        <ApolloProvider client={client}>
+          <ArtContext>{children}</ArtContext>
+        </ApolloProvider>
       </body>
     </html>
   );

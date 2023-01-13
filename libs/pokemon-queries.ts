@@ -11,3 +11,11 @@ export const GET_10_POKEMONS = gql`
     }
   }
 `;
+
+export const GET_POK_DETAILS = gql`
+  query {
+    pokemon(name: $name) {
+      name
+    }
+  }
+`;
