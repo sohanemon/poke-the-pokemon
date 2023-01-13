@@ -6,6 +6,7 @@ export const GET_10_POKEMONS = gql`
       results {
         name
         dreamworld
+        artwork
       }
     }
   }

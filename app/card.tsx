@@ -2,9 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Card({ pokemon }: { pokemon: Pokemon }) {
-  console.log(pokemon.image);
   return (
-    <Link href={`/${pokemon.name}`}>
+    <Link
+      href={{
+        pathname: `/${pokemon.name}`,
+        query: { url: pokemon.artwork as string },
+      }}
+    >
       <div className=' bg-white p-[10px] rounded-md hover:bg-primary anim cursor-pointer group relative sim-card'>
         <div className='group-hover:bg-white bg-[#F2F2F2] rounded-md p-5'>
           <Image

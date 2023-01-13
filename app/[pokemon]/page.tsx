@@ -7,7 +7,12 @@ import Link from "next/link";
 import GradientCard from "./gradient-card";
 import Progress from "./progress";
 
-export default function Page() {
+// note: 👇
+/* --------------------------------------------------------------------- */
+/*                      no more query from useRouter                     */
+/* --------------------------------------------------------------------- */
+
+export default function Page({ params: { pokemon } }: Props) {
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
       <Logo />
@@ -71,3 +76,9 @@ export default function Page() {
     </div>
   );
 }
+
+type Props = {
+  params: {
+    pokemon: string;
+  };
+};
