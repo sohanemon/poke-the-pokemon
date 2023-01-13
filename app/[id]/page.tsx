@@ -1,6 +1,8 @@
-import Logo from "@/components/logo";
+"use client";
 import image from "@/assets/media/image04.png";
+import Logo from "@/components/logo";
 import Image from "next/image";
+import Progress from "./progress";
 
 export default function Page() {
   return (
@@ -41,6 +43,15 @@ export default function Page() {
               <button className='bg-poison btn'>Poison</button>
             </div>
           </div>
+          {/* stats */}
+          <p className='text-xl'>Stats</p>
+          <Progress statName='HP' value={60} />
+          <Progress statName='HP' value={60} />
+          <Progress statName='HP' value={60} />
+          <Progress statName='HP' value={60} />
+          <Progress statName='HP' value={60} />
+          <Progress statName='HP' value={60} />
+          <Progress statName='HP' value={60} />
         </div>
       </main>
     </div>
