@@ -5,10 +5,11 @@ import Image from "next/image";
 import Progress from "./progress";
 import GradientCard from "./gradient-card";
 import home from "@/assets/icon/home.png";
+import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className='flex flex-col items-center w-3/4 mx-auto mb-'>
+    <div className='flex flex-col items-center w-3/4 mx-auto '>
       <Logo />
       <main className='grid grid-cols-3 2xl:gap-28 gap-16'>
         {/* done: left */}
@@ -59,10 +60,13 @@ export default function Page() {
         </div>
       </main>
       <div>
-        <button className='bg-[#FFCB05] flex items-center gap-3 py-4 px-8 border-4  rounded border-primary'>
+        <Link
+          href={"/"}
+          className='bg-[#FFCB05] flex items-center gap-3 py-4 px-8 border-4  rounded border-primary my-16'
+        >
           <Image src={home} alt='i' />
           <p className='text-xl text-white'>Back to Homepage</p>
-        </button>
+        </Link>
       </div>
     </div>
   );

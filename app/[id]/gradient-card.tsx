@@ -5,6 +5,7 @@ export default function GradientCard() {
         <div className='flex  justify-between h-full bg-white rounded-lg p-10 sim-card flex-wrap items-center '>
           <Items title='Height' value={2.05} />
           <Items title='Height' value={2.05} />
+          <div className='w-full my-3' />
           <Items title='Height' value={2.05} />
           <Items title='Height' value={2.05} />
         </div>
