@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export default function Progress({ statName, value }: Props) {
   return (
     <>
-      <p className='text-sm'>{statName}</p>
+      <p className='text-sm mb-1 mt-2'>{statName}</p>
       <ProgressBar
         completed={value}
         bgColor='#3DC7EF'
