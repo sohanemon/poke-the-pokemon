@@ -1,9 +1,16 @@
+"use client";
 import bg from "@/assets/media/Background.png";
+import { useQuery } from "@apollo/client";
 // import bg from "../assets/media/Background.png";
 
 import Logo from "../components/logo";
 import Card from "./card";
+import { GET_POKEMONS, gqlVariables } from "../libs/get-pockemon";
 export default function Hero() {
+  const { loading, error, data } = useQuery(GET_POKEMONS, {
+    variables: gqlVariables,
+  });
+  console.log(data);
   return (
     <section
       className='min-h-screen bg-no-repeat w-full bg-cover bg-center'

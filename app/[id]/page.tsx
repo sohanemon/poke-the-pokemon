@@ -1,11 +1,11 @@
 "use client";
+import home from "@/assets/icon/home.png";
 import image from "@/assets/media/image04.png";
 import Logo from "@/components/logo";
 import Image from "next/image";
-import Progress from "./progress";
-import GradientCard from "./gradient-card";
-import home from "@/assets/icon/home.png";
 import Link from "next/link";
+import GradientCard from "./gradient-card";
+import Progress from "./progress";
 
 export default function Page() {
   return (
