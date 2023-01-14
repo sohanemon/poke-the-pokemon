@@ -15,12 +15,23 @@ export default function GradientCard({
   return (
     <>
       <div className='rounded-lg w-full h-auto mx-auto  mt-10 gradient p-1 sim-card '>
-        <div className='flex  justify-between h-full bg-white rounded-lg p-10 sim-card flex-wrap items-center '>
-          <Items title='Height' value={2.05} />
-          <Items title='Height' value={2.05} />
+        <div className='flex   h-full bg-white rounded-lg p-10 sim-card flex-wrap  '>
+          <Items title='Height' value={<>{height}&ldquo;</>} />
+          <Items title='Category' value='Seed' />
           <div className='w-full my-3' />
-          <Items title='Height' value={2.05} />
-          <Items title='Height' value={2.05} />
+          <Items title='Weight' value={<>{weight} lbs</>} />
+          <Items
+            title='Height'
+            value={
+              <>
+                {abilities?.map((ability) => (
+                  <p className='capitalize' key={ability.slot}>
+                    {ability.ability.name}
+                  </p>
+                ))}
+              </>
+            }
+          />
         </div>
       </div>
     </>

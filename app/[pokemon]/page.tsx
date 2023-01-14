@@ -35,10 +35,10 @@ export default function Page({ params: { pokemon } }: Props) {
             born. The seed slowly grows larger.
           </p>
           <GradientCard
-            abilities={poke.abilities!}
-            category={poke.types!}
-            height={poke.height!}
-            weight={poke.weight!}
+            abilities={poke?.abilities!}
+            category={poke?.types!}
+            height={poke?.height!}
+            weight={poke?.weight!}
           />
         </div>
         {/* done: middle */}
@@ -71,15 +71,15 @@ export default function Page({ params: { pokemon } }: Props) {
             </div>
           </div>
           {/* stats */}
-          <div>
+          <div className='capitalize'>
             <p className='text-xl mb-8'>Stats</p>
-            <Progress statName='HP' value={60} />
-            <Progress statName='HP' value={60} />
-            <Progress statName='HP' value={60} />
-            <Progress statName='HP' value={60} />
-            <Progress statName='HP' value={60} />
-            <Progress statName='HP' value={60} />
-            <Progress statName='HP' value={60} />
+            {poke?.stats?.map((stat) => (
+              <Progress
+                key={stat.stat.id}
+                statName={stat.stat.name as string}
+                value={stat.base_stat}
+              />
+            ))}
           </div>
         </div>
       </main>
