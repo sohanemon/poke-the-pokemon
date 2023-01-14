@@ -5,11 +5,13 @@ import Logo from "@/components/logo";
 import { useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
+import { lazy, Suspense } from "react";
 import { useArt } from "../../contexts/art-context";
 import { GET_POK_DETAILS } from "../../graphql/pokemon-queries";
 import GradientCard from "./gradient-card";
 import Progress from "./progress";
 
+const Button = lazy(() => import("./button"));
 // note: 👇
 /* --------------------------------------------------------------------- */
 /*                      no more query from useRouter                     */
@@ -66,14 +68,9 @@ export default function Page({ params: { pokemon } }: Props) {
             {!loading && (
               <div className='2xl:space-x-5 space-x-3'>
                 {poke?.types?.map((type) => (
-                  <button
-                    key={type.type.id}
-                    className={` capitalize !bg-${
-                      type.type.name && type.type.name
-                    } btn`}
-                  >
-                    {type.type.name}
-                  </button>
+                  <Suspense fallback='loading' key={type.type.id}>
+                    <Button type={type} />
+                  </Suspense>
                 ))}
               </div>
             )}

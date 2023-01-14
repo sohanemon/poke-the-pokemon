@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        fire: "#FC7C23",
         base: "#D9D9D9",
         primary: "#257bc4",
         grass: "#9BCC50",
         poison: "#B97FC9",
-        fire: "#FC7C23",
         psychic: "#F366B9",
         ice: "#3DC7EF",
         bug: "#53a253",
