@@ -30,7 +30,7 @@ export default function Page({ params: { pokemon } }: Props) {
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
       <Logo />
-      <main className='grid grid-cols-3 2xl:gap-28 gap-16'>
+      <main className='grid grid-cols-1 sm:grid-cols-3 2xl:gap-28 gap-16'>
         {/* done: left */}
         <div>
           <p className='2xl:text-5xl text-3xl font-medium text-blue-600 capitalize'>
@@ -52,7 +52,7 @@ export default function Page({ params: { pokemon } }: Props) {
           )}
         </div>
         {/* done: middle */}
-        <div>
+        <div className='order-first sm:order-none'>
           <Image
             placeholder='blur'
             blurDataURL='none'
