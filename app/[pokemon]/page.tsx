@@ -34,12 +34,14 @@ export default function Page({ params: { pokemon } }: Props) {
             There is a plant seed on its back right from the day this Pokémon is
             born. The seed slowly grows larger.
           </p>
-          <GradientCard
-            abilities={poke?.abilities!}
-            category={poke?.types!}
-            height={poke?.height!}
-            weight={poke?.weight!}
-          />
+          {!loading && (
+            <GradientCard
+              abilities={poke?.abilities!}
+              category={poke?.types!}
+              height={poke?.height!}
+              weight={poke?.weight!}
+            />
+          )}
         </div>
         {/* done: middle */}
         <div>
@@ -56,16 +58,20 @@ export default function Page({ params: { pokemon } }: Props) {
           {/* each items */}
           <div className='space-y-4'>
             <p className='text-xl'>Type</p>
-            <div className='2xl:space-x-5 space-x-3'>
-              {poke?.types?.map((type) => (
-                <button
-                  key={type.type.id}
-                  className={` capitalize bg-${type.type.name} btn`}
-                >
-                  {type.type.name}
-                </button>
-              ))}
-            </div>
+            {!loading && (
+              <div className='2xl:space-x-5 space-x-3'>
+                {poke?.types?.map((type) => (
+                  <button
+                    key={type.type.id}
+                    className={` capitalize !bg-${
+                      type.type.name && type.type.name
+                    } btn`}
+                  >
+                    {type.type.name}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
           <div className='space-y-4'>
             <p className='text-xl'>Weaknesses</p>
