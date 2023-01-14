@@ -11,6 +11,7 @@ import { GET_POK_DETAILS, GET_TYPES } from "../../graphql/pokemon-queries";
 import GradientCard from "./gradient-card";
 import Progress from "./progress";
 import useTypes from "../../hooks/use-types";
+import { randomTypes } from "../../utils/random-element";
 
 const Button = lazy(() => import("./button"));
 // note: 👇
@@ -25,7 +26,6 @@ export default function Page({ params: { pokemon } }: Props) {
   });
   const poke = data?.pokemon as Stats;
   const type = useTypes(poke?.types as [Type]);
-  console.log(type);
 
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
@@ -81,10 +81,13 @@ export default function Page({ params: { pokemon } }: Props) {
           <div className='space-y-4'>
             <p className='text-xl'>Weaknesses</p>
             <div className='2xl:space-x-5 space-x-3'>
-              <button className='bg-grass btn'>Grass</button>
-              <button className='bg-poison btn'>Poison</button>
-              <button className='bg-grass btn'>Grass</button>
-              <button className='bg-poison btn'>Poison</button>
+              {randomTypes(type!)
+                ?.slice(0, 3)
+                .map((_) => (
+                  <button key={_} className={`bg-${_} btn`}>
+                    {_}
+                  </button>
+                ))}
             </div>
           </div>
           {/* stats */}

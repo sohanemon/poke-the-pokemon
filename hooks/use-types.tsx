@@ -1,10 +1,11 @@
 import { useQuery } from "@apollo/client";
 import { GET_TYPES } from "../graphql/pokemon-queries";
 const useTypes = (currentType: [Type]) => {
-  const { loading: loadingTypes, data } = useQuery(GET_TYPES);
-
-  const types = data?.types?.results as [Type];
-  return performIntersection(currentType, types);
+  const { loading, data } = useQuery(GET_TYPES);
+  if (!loading) {
+    const types = data?.types?.results as [Type];
+    return performIntersection(currentType, types);
+  }
 };
 
 export default useTypes;
