@@ -15,14 +15,15 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   const { loading, error, data } = useQuery(GET_10_POKEMONS);
   const [sm, setSm] = useState<boolean>();
-  function isSm() {
-    window.innerWidth < 641 ? setSm(true) : setSm(false);
-  }
+
   useEffect(() => {
     isSm();
     window.addEventListener("resize", () => isSm());
   }, []);
-
+  function isSm() {
+    window.innerWidth < 700 ? setSm(true) : setSm(false);
+  }
+  console.log(sm);
   if (error) {
     return <div className='text-7xl text-center'>Unexpected Error</div>;
   }
