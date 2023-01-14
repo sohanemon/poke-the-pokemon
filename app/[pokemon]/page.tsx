@@ -7,13 +7,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { lazy, Suspense } from "react";
 import { useArt } from "../../contexts/art-context";
-import { GET_POK_DETAILS, GET_TYPES } from "../../graphql/pokemon-queries";
-import GradientCard from "./gradient-card";
-import Progress from "./progress";
+import { GET_POK_DETAILS } from "../../graphql/pokemon-queries";
 import useTypes from "../../hooks/use-types";
 import { randomTypes } from "../../utils/random-element";
+import GradientCard from "./gradient-card";
+import Progress from "./progress";
 
-const Button = lazy(() => import("./button"));
+const Button = lazy(() => import("../../components/button"));
 // note: 👇
 /* --------------------------------------------------------------------- */
 /*                      no more query from useRouter                     */

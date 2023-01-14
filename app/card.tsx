@@ -1,10 +1,10 @@
+import { useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
-import { useArt } from "../contexts/art-context";
-import { useQuery } from "@apollo/client";
-import { GET_POK_TYPE } from "../graphql/pokemon-queries";
-import Button from "./[pokemon]/button";
 import { Suspense } from "react";
+import Button from "../components/button";
+import { useArt } from "../contexts/art-context";
+import { GET_POK_TYPE } from "../graphql/pokemon-queries";
 
 export default function Card({ pokemon }: { pokemon: Pokemon }) {
   console.log();
