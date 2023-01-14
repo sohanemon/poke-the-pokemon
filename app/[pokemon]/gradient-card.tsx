@@ -8,8 +8,6 @@ export default function GradientCard({
   abilities: [Abilities];
   height: number;
   weight: number;
-
-  // @ts-ignore
   category: [Type];
 }) {
   return (

@@ -24,9 +24,9 @@ type Stat = {
   stat: BaseName;
 };
 
-const Type = {
-  slot: number,
-  type: BaseName,
+type Type = {
+  slot: number;
+  type: BaseName;
 };
 
 type Stats = Partial<{

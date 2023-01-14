@@ -20,7 +20,7 @@ export default function Page({ params: { pokemon } }: Props) {
     variables: { name: pokemon },
   });
   const poke = data?.pokemon as Stats;
-  console.log(poke);
+  console.log(poke?.types);
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
       <Logo />
@@ -57,8 +57,11 @@ export default function Page({ params: { pokemon } }: Props) {
           <div className='space-y-4'>
             <p className='text-xl'>Type</p>
             <div className='2xl:space-x-5 space-x-3'>
-              <button className='bg-grass btn'>Grass</button>
-              <button className='bg-poison btn'>Poison</button>
+              {poke?.types?.map((type) => (
+                <button key={type} className='bg-grass btn'>
+                  {type.name}
+                </button>
+              ))}
             </div>
           </div>
           <div className='space-y-4'>
