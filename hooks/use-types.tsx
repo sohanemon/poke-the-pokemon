@@ -1,14 +1,22 @@
 import { useQuery } from "@apollo/client";
-import { type } from "os";
 import { GET_TYPES } from "../graphql/pokemon-queries";
 const useTypes = (currentType: [Type]) => {
   const { loading: loadingTypes, data } = useQuery(GET_TYPES);
 
   const types = data?.types?.results as [Type];
-  //   const newTypes = currentType?.map((fetched) =>
-  //     types?.filter((prev) => fetched.type?.name !== prev?.name)
-  //   );
-  //   return Array.from(new Set(newTypes?.flat()));
+  return performIntersection(currentType, types);
 };
 
 export default useTypes;
+
+function performIntersection(arr1: [Type], arr2: [Type]) {
+  const newArr1 = arr1?.map((_) => _.type.name);
+  const newArr2 = arr2?.map((_) => _.name);
+  let result: string[] = [];
+  newArr2?.map((_) => {
+    if (newArr1?.indexOf(_) === -1) {
+      result.push(_ as string);
+    }
+  });
+  return result;
+}
