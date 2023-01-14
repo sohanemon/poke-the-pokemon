@@ -60,7 +60,7 @@ export default function Page({ params: { pokemon } }: Props) {
               {poke?.types?.map((type) => (
                 <button
                   key={type.type.id}
-                  className={`bg-${type.type.name} btn`}
+                  className={` capitalize bg-${type.type.name} btn`}
                 >
                   {type.type.name}
                 </button>
