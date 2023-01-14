@@ -1,13 +1,13 @@
 "use client";
 import home from "@/assets/icon/home.png";
 import Logo from "@/components/logo";
+import { useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import { useArt } from "../../contexts/art-context";
+import { GET_POK_DETAILS } from "../../graphql/pokemon-queries";
 import GradientCard from "./gradient-card";
 import Progress from "./progress";
-import { useQuery } from "@apollo/client";
-import { GET_POK_DETAILS } from "../../libs/pokemon-queries";
 
 // note: 👇
 /* --------------------------------------------------------------------- */
@@ -58,8 +58,11 @@ export default function Page({ params: { pokemon } }: Props) {
             <p className='text-xl'>Type</p>
             <div className='2xl:space-x-5 space-x-3'>
               {poke?.types?.map((type) => (
-                <button key={type} className='bg-grass btn'>
-                  {type.name}
+                <button
+                  key={type.type.id}
+                  className={`bg-${type.type.name} btn`}
+                >
+                  {type.type.name}
                 </button>
               ))}
             </div>
