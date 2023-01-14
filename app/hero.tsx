@@ -9,6 +9,7 @@ import Card from "./card";
 import Loader from "../components/loader";
 import Image from "next/image";
 import texture from "../assets/media/Texture.png";
+import Web from "./web";
 export default function Hero() {
   const { loading, error, data } = useQuery(GET_10_POKEMONS);
 
@@ -31,9 +32,7 @@ export default function Hero() {
           ) : (
             <>
               {/* @ts-ignore */}
-              {data?.pokemons?.results.map((pokemon: Pokemon, idx) => (
-                <Card key={idx} pokemon={pokemon} />
-              ))}
+              {<Web results={data?.pokemons?.results} />}
             </>
           )}
         </div>
