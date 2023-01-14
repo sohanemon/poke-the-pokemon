@@ -24,16 +24,4 @@
 
     text-align: center;
   }
-  .two-color-btn span {
-    color: #15295e;
-    font-weight: bold;
-    font-family: Arial;
-    font-size: 20px;
-  }
-  .two-color-btn:hover {
-    background: -webkit-linear-gradient(#d8ddeb 50%, #adbadb 50%);
-    background: -o-linear-gradient(#d8ddeb 50%, #adbadb 50%);
-    background: -moz-linear-gradient(#d8ddeb 50%, #adbadb 50%);
-    background: linear-gradient(#d8ddeb 50%, #adbadb 50%);
-  }
 }
