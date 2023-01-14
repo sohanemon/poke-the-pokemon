@@ -11,8 +11,17 @@ import Image from "next/image";
 import texture from "../assets/media/Texture.png";
 import Web from "./web";
 import Mobile from "./mobile";
+import { useEffect, useState } from "react";
 export default function Hero() {
   const { loading, error, data } = useQuery(GET_10_POKEMONS);
+  const [sm, setSm] = useState<boolean>();
+  function isSm() {
+    window.innerWidth < 641 ? setSm(true) : setSm(false);
+  }
+  useEffect(() => {
+    isSm();
+    window.addEventListener("resize", () => isSm());
+  }, []);
 
   if (error) {
     return <div className='text-7xl text-center'>Unexpected Error</div>;
@@ -28,19 +37,18 @@ export default function Hero() {
         <div className='pointer-events-none'>
           <Logo />
         </div>
-        <Mobile results={data?.pokemons?.results} />
-        {/* todo: card */}
-        <div className='grid lg:grid-cols-4 xl:grid-cols-5 gap-10 w-5/6 xl:w-4/5 2xl:w-2/3 items-center mb-40'>
-          {loading ? (
-            <Loader />
-          ) : (
-            <>
-              {
-                // <Web results={data?.pokemons?.results} />
-              }
-            </>
-          )}
-        </div>
+        {/* done: card */}
+        {sm ? (
+          <Mobile results={data?.pokemons?.results} />
+        ) : (
+          <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-10 w-5/6 xl:w-4/5 2xl:w-2/3 items-center mb-40'>
+            {loading ? (
+              <Loader />
+            ) : (
+              <>{<Web results={data?.pokemons?.results} />}</>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
