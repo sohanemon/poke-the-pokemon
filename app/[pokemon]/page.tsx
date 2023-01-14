@@ -1,5 +1,6 @@
 "use client";
 import home from "@/assets/icon/home.png";
+import Loader from "@/components/loader";
 import Logo from "@/components/logo";
 import { useQuery } from "@apollo/client";
 import Image from "next/image";
@@ -34,18 +35,22 @@ export default function Page({ params: { pokemon } }: Props) {
             There is a plant seed on its back right from the day this Pokémon is
             born. The seed slowly grows larger.
           </p>
-          {!loading && (
+          {!loading ? (
             <GradientCard
               abilities={poke?.abilities!}
               category={poke?.types!}
               height={poke?.height!}
               weight={poke?.weight!}
             />
+          ) : (
+            <Loader />
           )}
         </div>
         {/* done: middle */}
         <div>
           <Image
+            placeholder='blur'
+            blurDataURL='none'
             className='w-full hover:scale-110 anim'
             src={art!}
             alt=''

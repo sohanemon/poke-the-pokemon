@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/client";
 import Logo from "../components/logo";
 import { GET_10_POKEMONS } from "../graphql/pokemon-queries";
 import Card from "./card";
+import Loader from "../components/loader";
 export default function Hero() {
   const { loading, error, data } = useQuery(GET_10_POKEMONS);
 
@@ -22,10 +23,16 @@ export default function Hero() {
         <Logo />
         {/* todo: card */}
         <div className='grid lg:grid-cols-4 xl:grid-cols-5 gap-10 w-5/6 xl:w-4/5 2xl:w-2/3 items-center mb-40'>
-          {/* @ts-ignore */}
-          {data?.pokemons?.results.map((pokemon: Pokemon, idx) => (
-            <Card key={idx} pokemon={pokemon} />
-          ))}
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              {/* @ts-ignore */}
+              {data?.pokemons?.results.map((pokemon: Pokemon, idx) => (
+                <Card key={idx} pokemon={pokemon} />
+              ))}
+            </>
+          )}
         </div>
       </div>
     </section>
