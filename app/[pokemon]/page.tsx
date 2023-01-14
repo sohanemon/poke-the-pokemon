@@ -7,9 +7,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { lazy, Suspense } from "react";
 import { useArt } from "../../contexts/art-context";
-import { GET_POK_DETAILS } from "../../graphql/pokemon-queries";
+import { GET_POK_DETAILS, GET_TYPES } from "../../graphql/pokemon-queries";
 import GradientCard from "./gradient-card";
 import Progress from "./progress";
+import useTypes from "../../hooks/use-types";
 
 const Button = lazy(() => import("./button"));
 // note: 👇
@@ -22,8 +23,9 @@ export default function Page({ params: { pokemon } }: Props) {
   const { loading, data } = useQuery(GET_POK_DETAILS, {
     variables: { name: pokemon },
   });
+  useTypes();
   const poke = data?.pokemon as Stats;
-  console.log(poke?.types);
+
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
       <Logo />
