@@ -7,6 +7,8 @@ import Logo from "../components/logo";
 import { GET_10_POKEMONS } from "../graphql/pokemon-queries";
 import Card from "./card";
 import Loader from "../components/loader";
+import Image from "next/image";
+import texture from "../assets/media/Texture.png";
 export default function Hero() {
   const { loading, error, data } = useQuery(GET_10_POKEMONS);
 
@@ -15,9 +17,10 @@ export default function Hero() {
   }
   return (
     <section
-      className='min-h-screen bg-no-repeat w-full bg-cover bg-center'
+      className='min-h-screen bg-no-repeat w-full bg-cover bg-center relative'
       style={{ backgroundImage: `url(${bg.src})` }}
     >
+      <Image src={texture} alt='texture' className='absolute h-full bg-cover' />
       <div className='flex flex-col items-center '>
         {/* done: logo */}
         <Logo />
