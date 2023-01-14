@@ -25,6 +25,7 @@ module.exports = {
         water: "#6BCFEB",
         ground: "#744E33",
         dragon: "#DAF16F",
+        steel: "#11436C",
         normal: "#B56B3A",
       },
     },
