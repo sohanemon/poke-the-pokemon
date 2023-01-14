@@ -38,3 +38,13 @@ export const GET_POK_DETAILS = gql`
     }
   }
 `;
+
+export const GET_TYPES = gql`
+  query {
+    types {
+      results {
+        name
+      }
+    }
+  }
+`;
