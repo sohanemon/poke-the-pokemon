@@ -29,7 +29,7 @@ export default function Hero() {
   }
   return (
     <section
-      className='min-h-screen bg-no-repeat w-full bg-cover bg-center relative'
+      className='sm:min-h-screen pb-10 sm:pb-0 bg-no-repeat w-full bg-cover bg-center relative'
       style={{ backgroundImage: `url(${bg.src})` }}
     >
       <Image src={texture} alt='texture' className='absolute h-full bg-cover' />
