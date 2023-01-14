@@ -1,7 +1,7 @@
 export default function Loader() {
   return (
     <>
-      <span className='bg-fire bg-base bg-primary bg-grass bg-poison bg-psychic bg-ice bg-bug bg-flying bg-ghost bg-fighting bg-dark bg-fairy bg-steel bg-electric bg-water bg-ground bg-dragon bg-normal hidden'></span>
+      <span className='bg-unknown bg-shadow bg-rock bg-fire bg-base bg-primary bg-grass bg-poison bg-psychic bg-ice bg-bug bg-flying bg-ghost bg-fighting bg-dark bg-fairy bg-steel bg-electric bg-water bg-ground bg-dragon bg-normal hidden'></span>
       <div className='w-full h-full grid place-content-center animate-spin text-primary col-span-full'>
         <svg
           xmlns='http://www.w3.org/2000/svg'

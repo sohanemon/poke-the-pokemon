@@ -84,7 +84,7 @@ export default function Page({ params: { pokemon } }: Props) {
               {randomTypes(type!)
                 ?.slice(0, 3)
                 .map((_) => (
-                  <button key={_} className={`bg-${_} btn`}>
+                  <button key={_} className={`bg-${_} btn capitalize`}>
                     {_}
                   </button>
                 ))}
