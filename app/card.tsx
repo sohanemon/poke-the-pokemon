@@ -1,8 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useArt } from "../contexts/art-context";
+import { useQuery } from "@apollo/client";
+import { GET_POK_TYPE } from "../graphql/pokemon-queries";
+import Button from "./[pokemon]/button";
+import { Suspense } from "react";
 
 export default function Card({ pokemon }: { pokemon: Pokemon }) {
+  console.log();
+  const { loading, data } = useQuery(GET_POK_TYPE, {
+    variables: {
+      name: pokemon.name,
+    },
+  });
+  console.log(data);
   const { setArt } = useArt();
   return (
     <Link
@@ -21,13 +32,20 @@ export default function Card({ pokemon }: { pokemon: Pokemon }) {
             alt=''
           />
         </div>
-        <p className='text-sm absolute inset-4'>#010</p>
+        <p className='text-sm absolute inset-4'>
+          #{data?.pokemon?.id.toString().padStart(3, 0)}
+        </p>
         <p className='mt-3 mb-1 group-hover:text-white anim capitalize'>
           {pokemon.name}
         </p>
         <div className='flex gap-2 2xl:gap-2 p-[6px] mr-4'>
-          <button className='bg-grass btn'>Grass</button>
-          <button className='bg-poison btn'>Poison</button>
+          <div className='2xl:space-x-3 space-x-1'>
+            {data?.pokemon?.types?.map((type: Type) => (
+              <Suspense fallback='loading' key={type.type.id}>
+                <Button type={type} />
+              </Suspense>
+            ))}
+          </div>
         </div>
       </div>
     </Link>
