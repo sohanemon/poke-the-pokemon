@@ -22,7 +22,7 @@ export default function Card({ pokemon }: { pokemon: Pokemon }) {
         pathname: `/${pokemon.name}`,
       }}
     >
-      <div className=' bg-white p-[10px] rounded-md hover:bg-primary anim cursor-pointer group relative sim-card'>
+      <div className='max-w-[256px] bg-white p-[10px] rounded-md hover:bg-primary anim cursor-pointer group relative sim-card'>
         <div className='group-hover:bg-white bg-[#F2F2F2] rounded-md p-5'>
           <Image
             className='w-full group-hover:scale-110 anim h-28'

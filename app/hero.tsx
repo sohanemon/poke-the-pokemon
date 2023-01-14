@@ -25,7 +25,9 @@ export default function Hero() {
       <Image src={texture} alt='texture' className='absolute h-full bg-cover' />
       <div className='flex flex-col items-center '>
         {/* done: logo */}
-        <Logo />
+        <div className='pointer-events-none'>
+          <Logo />
+        </div>
         <Mobile results={data?.pokemons?.results} />
         {/* todo: card */}
         <div className='grid lg:grid-cols-4 xl:grid-cols-5 gap-10 w-5/6 xl:w-4/5 2xl:w-2/3 items-center mb-40'>
