@@ -39,6 +39,19 @@ export const GET_POK_DETAILS = gql`
   }
 `;
 
+export const GET_POK_TYPE = gql`
+  query ($name: String!) {
+    pokemon(name: $name) {
+      id
+      types {
+        type {
+          name
+        }
+      }
+    }
+  }
+`;
+
 export const GET_TYPES = gql`
   query {
     types {
