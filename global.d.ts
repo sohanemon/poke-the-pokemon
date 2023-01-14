@@ -25,6 +25,7 @@ type Stat = {
 };
 
 type Type = {
+  name: String;
   slot: number;
   type: BaseName;
 };

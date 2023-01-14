@@ -23,8 +23,9 @@ export default function Page({ params: { pokemon } }: Props) {
   const { loading, data } = useQuery(GET_POK_DETAILS, {
     variables: { name: pokemon },
   });
-  useTypes();
   const poke = data?.pokemon as Stats;
+  const type = useTypes(poke?.types as [Type]);
+  console.log(type);
 
   return (
     <div className='flex flex-col items-center w-3/4 mx-auto '>
