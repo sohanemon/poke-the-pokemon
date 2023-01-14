@@ -1,4 +1,5 @@
 import Card from "./card";
+
 export default function Web({ results }: { results: [Pokemon] }) {
   return (
     <>
