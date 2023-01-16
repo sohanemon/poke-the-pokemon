@@ -13,7 +13,6 @@ export default function Card({ pokemon }: { pokemon: Pokemon }) {
       name: pokemon.name,
     },
   });
-  console.log(data);
   const { setArt } = useArt();
   return (
     <Link

@@ -3,6 +3,7 @@ import home from "@/assets/icon/home.png";
 import Loader from "@/components/loader";
 import Logo from "@/components/logo";
 import { useQuery } from "@apollo/client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { lazy, Suspense } from "react";
@@ -11,7 +12,6 @@ import { GET_POK_DETAILS } from "../../graphql/pokemon-queries";
 import useTypes from "../../hooks/use-types";
 import { randomTypes } from "../../utils/random-element";
 import GradientCard from "./gradient-card";
-import { motion } from "framer-motion";
 import Progress from "./progress";
 
 const Button = lazy(() => import("../../components/button"));
