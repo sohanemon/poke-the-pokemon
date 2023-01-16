@@ -57,6 +57,7 @@ export default function Page({ params: { pokemon } }: Props) {
           className='order-first sm:order-none'
           initial={{ y: -500, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
         >
           <Image
             placeholder='blur'
