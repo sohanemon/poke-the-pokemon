@@ -5,7 +5,7 @@ import img5 from "@/assets/media/Image05.png";
 import img1 from "@/assets/media/Image01.png";
 import img2 from "@/assets/media/Image02.png";
 
-export default function WebBlog() {
+export default function MobileBlog() {
   return (
     <>
       {/* todo: details */}

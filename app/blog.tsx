@@ -1,6 +1,10 @@
+"use client";
 import Brush from "@/assets/media/Brush.png";
 import Image from "next/image";
+import useSm from "../hooks/use-sm";
+import MobileBlog from "./mobile-blog";
 export default function Blog() {
+  const sm = useSm();
   return (
     <section className='py-8 px-5'>
       {/* done: heading */}
@@ -13,6 +17,7 @@ export default function Blog() {
           </p>
         </div>
       </div>
+      {sm ? <MobileBlog /> : ""}
     </section>
   );
 }

@@ -10,18 +10,10 @@ import texture from "../assets/media/Texture.png";
 import Web from "./web";
 import Mobile from "./mobile";
 import { useEffect, useState } from "react";
+import useSm from "../hooks/use-sm";
 export default function Hero() {
   const { loading, error, data } = useQuery(GET_10_POKEMONS);
-  const [sm, setSm] = useState<boolean>();
-
-  useEffect(() => {
-    isSm();
-    window.addEventListener("resize", () => isSm());
-  }, []);
-  function isSm() {
-    window.innerWidth < 700 ? setSm(true) : setSm(false);
-  }
-  console.log(sm);
+  const sm = useSm();
   if (error) {
     return <div className='text-7xl text-center'>Unexpected Error</div>;
   }
