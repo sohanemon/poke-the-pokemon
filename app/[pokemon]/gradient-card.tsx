@@ -46,7 +46,7 @@ const Items = ({
   return (
     <div className='space-y-3 basis-1/2'>
       <p className='text-xl font-medium'>{title}</p>
-      <p className='text-base text-black'>{value}</p>
+      <p className=' text-black'>{value}</p>
     </div>
   );
 };

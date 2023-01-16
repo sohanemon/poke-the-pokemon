@@ -7,7 +7,7 @@ import img2 from "@/assets/media/Image02.png";
 
 export default function WebBlog() {
   return (
-    <div className='grid grid-cols-7 text-justify gap-5'>
+    <div className='grid grid-cols-7 text-justify gap-5 text-xs 2xl:text-base'>
       <p className='col-span-3'>
         Lorem ipsum dolor sit amet consectetur. Risus cursus nibh elementum
         ornare a aliquet ac. Feugiat scelerisque ultrices tempor facilisi tempus

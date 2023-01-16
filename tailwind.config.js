@@ -9,7 +9,6 @@ module.exports = {
     extend: {
       colors: {
         fire: "#FC7C23",
-        base: "#D9D9D9",
         primary: "#257bc4",
         grass: "#9BCC50",
         poison: "#B97FC9",
