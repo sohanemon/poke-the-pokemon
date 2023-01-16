@@ -11,6 +11,7 @@ import { GET_POK_DETAILS } from "../../graphql/pokemon-queries";
 import useTypes from "../../hooks/use-types";
 import { randomTypes } from "../../utils/random-element";
 import GradientCard from "./gradient-card";
+import { motion } from "framer-motion";
 import Progress from "./progress";
 
 const Button = lazy(() => import("../../components/button"));
@@ -52,7 +53,11 @@ export default function Page({ params: { pokemon } }: Props) {
           )}
         </div>
         {/* done: middle */}
-        <div className='order-first sm:order-none'>
+        <motion.div
+          className='order-first sm:order-none'
+          initial={{ y: -500, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
           <Image
             placeholder='blur'
             blurDataURL='none'
@@ -62,7 +67,7 @@ export default function Page({ params: { pokemon } }: Props) {
             width={500}
             height={500}
           />
-        </div>
+        </motion.div>
         {/* todo: right */}
         <div className='space-y-10'>
           {/* each items */}
