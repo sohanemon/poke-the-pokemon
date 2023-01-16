@@ -20,32 +20,11 @@ export default function MobileBlog() {
       </p>
       {/* todo: grid image section */}
       <div className='grid grid-cols-3 grid-rows-5 gap-3 my-5'>
-        <Image
-          className='col-start-2 row-span-2 object-cover h-full'
-          src={img1}
-          alt='img'
-        />
-
-        <Image
-          className='col-start-1 row-span-2 object-cover h-full'
-          src={img2}
-          alt='img'
-        />
-        <Image
-          className='row-span-2 h-full object-cover'
-          src={img3}
-          alt='img'
-        />
-        <Image
-          className='row-span-2 h-full object-cover'
-          src={img4}
-          alt='img'
-        />
-        <Image
-          className='col-start-3 row-span-2 h-full object-cover'
-          src={img5}
-          alt='img'
-        />
+        <Image className='col-start-2 grid-image' src={img1} alt='img' />
+        <Image className='col-start-1 grid-image' src={img2} alt='img' />
+        <Image className='grid-image' src={img3} alt='img' />
+        <Image className='grid-image' src={img4} alt='img' />
+        <Image className='col-start-3 grid-image' src={img5} alt='img' />
       </div>
       {/* second details */}
       <p className='text-justify'>

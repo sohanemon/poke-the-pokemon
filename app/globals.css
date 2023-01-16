@@ -26,4 +26,7 @@
 
     text-align: center;
   }
+  .grid-image {
+    @apply row-span-2 object-cover h-full;
+  }
 }

@@ -3,6 +3,7 @@ import Brush from "@/assets/media/Brush.png";
 import Image from "next/image";
 import useSm from "../hooks/use-sm";
 import MobileBlog from "./mobile-blog";
+import WebBlog from "./web-blog";
 export default function Blog() {
   const sm = useSm();
   return (
@@ -17,7 +18,7 @@ export default function Blog() {
           </p>
         </div>
       </div>
-      {sm ? <MobileBlog /> : ""}
+      {sm ? <MobileBlog /> : <WebBlog />}
     </section>
   );
 }
