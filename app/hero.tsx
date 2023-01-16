@@ -1,16 +1,14 @@
 "use client";
 import bg from "@/assets/media/Background.png";
 import { useQuery } from "@apollo/client";
-import Logo from "../components/logo";
-import { GET_10_POKEMONS } from "../graphql/pokemon-queries";
-import Card from "./card";
-import Loader from "../components/loader";
 import Image from "next/image";
 import texture from "../assets/media/Texture.png";
-import Web from "./web";
-import Mobile from "./mobile";
-import { useEffect, useState } from "react";
+import Loader from "../components/loader";
+import Logo from "../components/logo";
+import { GET_10_POKEMONS } from "../graphql/pokemon-queries";
 import useSm from "../hooks/use-sm";
+import Mobile from "./mobile";
+import Web from "./web";
 export default function Hero() {
   const { loading, error, data } = useQuery(GET_10_POKEMONS);
   const sm = useSm();
@@ -32,7 +30,7 @@ export default function Hero() {
         {sm ? (
           <Mobile results={data?.pokemons?.results} />
         ) : (
-          <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-10 w-5/6 xl:w-4/5 2xl:w-2/3 items-center mb-40'>
+          <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-10 w-5/6 xl:w-4/5 2xl:w-2/3 items-center mb-10'>
             {loading ? (
               <Loader />
             ) : (
@@ -40,6 +38,7 @@ export default function Hero() {
             )}
           </div>
         )}
+        {/* <Pagination /> */}
       </div>
     </section>
   );
