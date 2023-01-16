@@ -1,8 +1,6 @@
 "use client";
 import bg from "@/assets/media/Background.png";
 import { useQuery } from "@apollo/client";
-// import bg from "../assets/media/Background.png";
-
 import Logo from "../components/logo";
 import { GET_10_POKEMONS } from "../graphql/pokemon-queries";
 import Card from "./card";
