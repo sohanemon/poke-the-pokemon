@@ -1,5 +1,4 @@
 import ProgressBar from "@ramonak/react-progress-bar";
-import { ReactNode } from "react";
 export default function Progress({ statName, value }: Props) {
   return (
     <>
